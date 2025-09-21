@@ -48,7 +48,6 @@ public class EmployeeDAOImpl implements EmployeeDAO{
         jdbcTemplate.update(sql, id);
     }
 
-    // Các phương thức tìm kiếm
     @Override
     public Employee findById(int id) {
         String sql = "SELECT * FROM employees WHERE id = ?";

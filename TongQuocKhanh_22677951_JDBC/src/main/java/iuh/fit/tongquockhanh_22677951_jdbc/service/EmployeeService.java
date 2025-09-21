@@ -14,7 +14,6 @@ public class EmployeeService {
         this.employeeDAO = employeeDAO;
     }
 
-    // Các phương thức CRUD cơ bản
     public void save(Employee employee) {
         employeeDAO.save(employee);
     }
@@ -34,8 +33,7 @@ public class EmployeeService {
     public void deleteById(long id) {
         employeeDAO.deleteById(id);
     }
-
-    // Các phương thức tìm kiếm
+    
     public Employee findById(int id) {
         return employeeDAO.findById(id);
     }

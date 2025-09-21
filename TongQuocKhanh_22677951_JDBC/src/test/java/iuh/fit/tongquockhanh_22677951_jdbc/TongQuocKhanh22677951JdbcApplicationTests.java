@@ -1,4 +1,4 @@
-package iuh.fit.edu;
+package iuh.fit.tongquockhanh_22677951_jdbc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -10,8 +10,7 @@ public interface EmployeeDAO {
     Employee getById(long id);
     List<Employee> getAll();
     void deleteById(long id);
-    
-    // Các phương thức tìm kiếm
+
     Employee findById(int id);
     List<Employee> findByName(String name);
     List<Employee> findByDepartmentId(int departmentId);

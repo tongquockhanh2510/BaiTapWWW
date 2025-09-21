@@ -15,14 +15,11 @@ public class EmployeeController {
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
-
-    // Các endpoint CRUD cơ bản
     @PostMapping
     public ResponseEntity<String> save(@RequestBody Employee employee) {
         employeeService.save(employee);
         return ResponseEntity.ok("Employee saved successfully");
     }
-
     @PutMapping("/{id}")
     public ResponseEntity<String> update(@PathVariable long id, @RequestBody Employee employee) {
         employee.setId((int) id);
@@ -47,8 +44,6 @@ public class EmployeeController {
         employeeService.deleteById(id);
         return ResponseEntity.ok("Employee deleted successfully");
     }
-
-    // Các endpoint tìm kiếm
     @GetMapping("/search/id/{id}")
     public ResponseEntity<Employee> findById(@PathVariable int id) {
         Employee employee = employeeService.findById(id);
