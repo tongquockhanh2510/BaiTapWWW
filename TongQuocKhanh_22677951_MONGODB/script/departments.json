@@ -1,0 +1,22 @@
+[
+  { "name": "Nguyễn Văn An", "age": 28, "salary": 15000000, "department_id": 1 },
+  { "name": "Trần Thị Bình", "age": 32, "salary": 18000000, "department_id": 1 },
+  { "name": "Lê Văn Cường", "age": 25, "salary": 12000000, "department_id": 2 },
+  { "name": "Phạm Thị Dung", "age": 30, "salary": 16000000, "department_id": 2 },
+  { "name": "Hoàng Văn Em", "age": 35, "salary": 20000000, "department_id": 3 },
+  { "name": "Vũ Thị Phương", "age": 27, "salary": 14000000, "department_id": 3 },
+  { "name": "Đặng Văn Giang", "age": 29, "salary": 17000000, "department_id": 4 },
+  { "name": "Bùi Thị Hoa", "age": 31, "salary": 19000000, "department_id": 4 },
+  { "name": "Ngô Văn Ích", "age": 26, "salary": 13000000, "department_id": 5 },
+  { "name": "Đinh Thị Kim", "age": 33, "salary": 21000000, "department_id": 5 },
+  { "name": "Tôn Văn Nam", "age": 24, "salary": 11000000, "department_id": 1 },
+  { "name": "Lý Thị Oanh", "age": 29, "salary": 16000000, "department_id": 2 },
+  { "name": "Đỗ Văn Phúc", "age": 32, "salary": 19000000, "department_id": 3 },
+  { "name": "Nguyễn Thị Quỳnh", "age": 27, "salary": 14500000, "department_id": 1 },
+  { "name": "Trần Văn Sơn", "age": 30, "salary": 17500000, "department_id": 2 },
+  { "name": "Phạm Thị Trang", "age": 26, "salary": 13500000, "department_id": 3 },
+  { "name": "Lê Văn Hùng", "age": 34, "salary": 19500000, "department_id": 4 },
+  { "name": "Vũ Thị Lan", "age": 28, "salary": 15500000, "department_id": 5 },
+  { "name": "Bùi Văn Tài", "age": 31, "salary": 18500000, "department_id": 1 },
+  { "name": "Nguyễn Thị Xuân", "age": 29, "salary": 16500000, "department_id": 2 }
+]

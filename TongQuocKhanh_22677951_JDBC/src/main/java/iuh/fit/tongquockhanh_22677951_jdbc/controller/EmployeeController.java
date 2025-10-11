@@ -1,88 +1,142 @@
 package iuh.fit.tongquockhanh_22677951_jdbc.controller;
 
+import iuh.fit.tongquockhanh_22677951_jdbc.entity.Department;
 import iuh.fit.tongquockhanh_22677951_jdbc.entity.Employee;
+import iuh.fit.tongquockhanh_22677951_jdbc.service.DepartmentService;
 import iuh.fit.tongquockhanh_22677951_jdbc.service.EmployeeService;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/employees")
+@Controller
 public class EmployeeController {
     private final EmployeeService employeeService;
+    private final DepartmentService departmentService;
 
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService, DepartmentService departmentService) {
         this.employeeService = employeeService;
-    }
-    @PostMapping
-    public ResponseEntity<String> save(@RequestBody Employee employee) {
-        employeeService.save(employee);
-        return ResponseEntity.ok("Employee saved successfully");
-    }
-    @PutMapping("/{id}")
-    public ResponseEntity<String> update(@PathVariable long id, @RequestBody Employee employee) {
-        employee.setId((int) id);
-        employeeService.update(employee);
-        return ResponseEntity.ok("Employee updated successfully");
+        this.departmentService = departmentService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Employee> getById(@PathVariable long id) {
-        Employee employee = employeeService.getById(id);
-        return ResponseEntity.ok(employee);
+    @GetMapping("/")
+    public String home(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) Integer age,
+            @RequestParam(required = false) Double salary,
+            @RequestParam(required = false) Integer departmentId,
+            Model model) {
+        List<Employee> employees = employeeService.findByFilters(name, age, salary, departmentId);
+        List<Department> departments = departmentService.getAll();
+        model.addAttribute("employees", employees);
+        model.addAttribute("departments", departments);
+        model.addAttribute("name", name);
+        model.addAttribute("age", age);
+        model.addAttribute("salary", salary);
+        model.addAttribute("departmentId", departmentId);
+        return "employees";
     }
 
-    @GetMapping
-    public ResponseEntity<List<Employee>> getAll() {
-        List<Employee> employees = employeeService.getAll();
-        return ResponseEntity.ok(employees);
+    @GetMapping("/employees")
+    public String employees(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) Integer age,
+            @RequestParam(required = false) Double salary,
+            @RequestParam(required = false) Integer departmentId,
+            Model model) {
+        List<Employee> employees = employeeService.findByFilters(name, age, salary, departmentId);
+        List<Department> departments = departmentService.getAll();
+        model.addAttribute("employees", employees);
+        model.addAttribute("departments", departments);
+        model.addAttribute("name", name);
+        model.addAttribute("age", age);
+        model.addAttribute("salary", salary);
+        model.addAttribute("departmentId", departmentId);
+        return "employees";
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable long id) {
-        employeeService.deleteById(id);
-        return ResponseEntity.ok("Employee deleted successfully");
+    @GetMapping("/employees/new")
+    public String newEmployeeForm(Model model) {
+        Employee employee = new Employee();
+        List<Department> departments = departmentService.getAll();
+        employee.setDepartmentID(null);
+        model.addAttribute("employee", employee);
+        model.addAttribute("departments", departments);
+        return "employee-form";
     }
-    @GetMapping("/search/id/{id}")
-    public ResponseEntity<Employee> findById(@PathVariable int id) {
-        Employee employee = employeeService.findById(id);
-        if (employee != null) {
-            return ResponseEntity.ok(employee);
-        } else {
-            return ResponseEntity.notFound().build();
+
+    @PostMapping("/employees")
+    public String saveEmployee(@ModelAttribute Employee employee, Model model) {
+        try {
+            String errorMessage = null;
+            if (employee.getName() == null || employee.getName().trim().isEmpty()) {
+                errorMessage = "Tên không được để trống";
+            } else if (employee.getAge() == null) {
+                errorMessage = "Tuổi không được để trống";
+            } else if (employee.getSalary() == null) {
+                errorMessage = "Lương không được để trống";
+            } else if (employee.getDepartmentID() == null) {
+                errorMessage = "Vui lòng chọn phòng ban";
+            }
+
+            if (errorMessage != null) {
+                List<Department> departments = departmentService.getAll();
+                model.addAttribute("departments", departments);
+                model.addAttribute("employee", employee);
+                model.addAttribute("errorMessage", errorMessage);
+                return "employee-form";
+            }
+
+            int rows = employeeService.save(employee);
+            if (rows > 0) {
+                return "redirect:/employees?success=true";
+            }
+            return "redirect:/employees?error=true";
+        } catch (Exception e) {
+            List<Department> departments = departmentService.getAll();
+            model.addAttribute("departments", departments);
+            model.addAttribute("employee", employee);
+            model.addAttribute("errorMessage", "Có lỗi xảy ra khi lưu nhân viên");
+            return "employee-form";
         }
     }
 
-    @GetMapping("/search/name/{name}")
-    public ResponseEntity<List<Employee>> findByName(@PathVariable String name) {
-        List<Employee> employees = employeeService.findByName(name);
-        return ResponseEntity.ok(employees);
+    @GetMapping("/employees/edit/{id}")
+    public String editEmployeeForm(@PathVariable int id, Model model) {
+        try {
+            Employee employee = employeeService.findById(id);
+            if (employee == null) {
+                return "redirect:/employees?error=true";
+            }
+            List<Department> departments = departmentService.getAll();
+            model.addAttribute("employee", employee);
+            model.addAttribute("departments", departments);
+            return "employee-form";
+        } catch (Exception e) {
+            return "redirect:/employees?error=true";
+        }
     }
 
-    @GetMapping("/search/department/{departmentId}")
-    public ResponseEntity<List<Employee>> findByDepartmentId(@PathVariable int departmentId) {
-        List<Employee> employees = employeeService.findByDepartmentId(departmentId);
-        return ResponseEntity.ok(employees);
+    @PostMapping("/employees/{id}")
+    public String updateEmployee(@PathVariable int id, @ModelAttribute Employee employee) {
+        try {
+            employee.setId(id);
+            employeeService.update(employee);
+            return "redirect:/employees?success=true";
+        } catch (Exception e) {
+            return "redirect:/employees?error=true";
+        }
     }
 
-    @GetMapping("/search/salary/range")
-    public ResponseEntity<List<Employee>> findBySalaryRange(
-            @RequestParam double minSalary, 
-            @RequestParam double maxSalary) {
-        List<Employee> employees = employeeService.findBySalaryRange(minSalary, maxSalary);
-        return ResponseEntity.ok(employees);
+    @GetMapping("/employees/delete/{id}")
+    public String deleteEmployee(@PathVariable int id) {
+        try {
+            employeeService.deleteById(id);
+            return "redirect:/employees?success=true";
+        } catch (Exception e) {
+            return "redirect:/employees?error=true";
+        }
     }
 
-    @GetMapping("/search/salary/greater-than/{salary}")
-    public ResponseEntity<List<Employee>> findBySalaryGreaterThan(@PathVariable double salary) {
-        List<Employee> employees = employeeService.findBySalaryGreaterThan(salary);
-        return ResponseEntity.ok(employees);
-    }
-
-    @GetMapping("/search/salary/less-than/{salary}")
-    public ResponseEntity<List<Employee>> findBySalaryLessThan(@PathVariable double salary) {
-        List<Employee> employees = employeeService.findBySalaryLessThan(salary);
-        return ResponseEntity.ok(employees);
-    }
 }

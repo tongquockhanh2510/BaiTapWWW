@@ -1,6 +1,5 @@
 package iuh.fit.tongquockhanh_22677951_jpa.service;
 
-import iuh.fit.tongquockhanh_22677951_jpa.entity.Department;
 import iuh.fit.tongquockhanh_22677951_jpa.entity.Employee;
 import iuh.fit.tongquockhanh_22677951_jpa.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
@@ -21,17 +20,21 @@ public class EmployeeService {
     public List<Employee> findAll() {
         return employeeRepository.findAll();
     }
-    public Optional<Employee> findById(Long id) {
+    public Optional<Employee> findById(Integer id) {
         return employeeRepository.findById(id);
     }
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         employeeRepository.deleteById(id);
     }
-    public List<Employee> findByName(String name) {
-        return employeeRepository.findByNameContaining(name);
-    }
-    public List<Employee> findByDepartmentId(Long departmentId) {
-        return employeeRepository.findByDepartment(new Department(departmentId));
+
+    public List<Employee> findAllFiltered(String name, Integer age, Double salary, Integer departmentId) {
+        List<Employee> employees = findAll();
+        return employees.stream()
+                .filter(e -> name == null || e.getName().toLowerCase().contains(name.toLowerCase()))
+                .filter(e -> age == null || e.getAge() != null && e.getAge().equals(age))
+                .filter(e -> salary == null || e.getSalary() != null && e.getSalary().equals(salary))
+                .filter(e -> departmentId == null || (e.getDepartment() != null && departmentId.equals(e.getDepartment().getId())))
+                .toList();
     }
     public List<Employee> findBySalaryRange(Double min, Double max) {
         return employeeRepository.findBySalaryBetween(min, max);

@@ -1,0 +1,8 @@
+[
+  { "_id": 1, "name": "IT" },
+  { "_id": 2, "name": "HR" },
+  { "_id": 3, "name": "Finance" },
+  { "_id": 4, "name": "Marketing" },
+  { "_id": 5, "name": "Sales" }
+]
+

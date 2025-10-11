@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="52ebc232-804c-40b2-b4e2-ebaef07881aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/script/departments.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/employees.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/department-employees.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/POSTMAN_TESTING_GUIDE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/dao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/dao/EmployeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/dao/EmployeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/dao/EmployeeDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/java/iuh/fit/tongquockhanh_22677951_jdbc/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JDBC/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/entity/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/repository/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/repository/DepartmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/java/iuh/fit/tongquockhanh_22677951_jpa/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../TongQuocKhanh_22677951_JPA/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/iuh/fit/tongquockhanh_22677951_mongodb/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iuh/fit/tongquockhanh_22677951_mongodb/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/iuh/fit/tongquockhanh_22677951_mongodb/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iuh/fit/tongquockhanh_22677951_mongodb/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/iuh/fit/tongquockhanh_22677951_mongodb/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iuh/fit/tongquockhanh_22677951_mongodb/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/iuh/fit/tongquockhanh_22677951_mongodb/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iuh/fit/tongquockhanh_22677951_mongodb/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TongQuocKhanh_22677951_MONGODB" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TongQuocKhanh_22677951_MONGODB" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TongQuocKhanh_22677951_MONGODB" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TongQuocKhanh_22677951_MONGODB" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TongQuocKhanh_22677951_MONGODB" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="331HnYKaedStrbmn8Jn9e7dWODr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build TongQuocKhanh_22677951_MONGODB.executor": "Run",
+    "Gradle.TongQuocKhanh_22677951_MONGODB [clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.TongQuocKhanh22677951MongodbApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/HocTap/Ki7/WWW/BaiTapWWW/TongQuocKhanh_22677951_JPA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\HocTap\Ki7\WWW\BaiTapWWW\TongQuocKhanh_22677951_MONGODB\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.TongQuocKhanh_22677951_MONGODB [clean]">
+    <configuration name="TongQuocKhanh_22677951_MONGODB [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TongQuocKhanh22677951MongodbApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="TongQuocKhanh_22677951_MONGODB.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="iuh.fit.tongquockhanh_22677951_mongodb.TongQuocKhanh22677951MongodbApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.TongQuocKhanh_22677951_MONGODB [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="52ebc232-804c-40b2-b4e2-ebaef07881aa" name="Changes" comment="" />
+      <created>1758477830882</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758477830882</updated>
+      <workItem from="1758477832105" duration="1710000" />
+      <workItem from="1758761087348" duration="2031000" />
+      <workItem from="1758764415535" duration="480000" />
+      <workItem from="1759682894723" duration="2068000" />
+      <workItem from="1759688042509" duration="775000" />
+      <workItem from="1759705980959" duration="816000" />
+      <workItem from="1759708068350" duration="401000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

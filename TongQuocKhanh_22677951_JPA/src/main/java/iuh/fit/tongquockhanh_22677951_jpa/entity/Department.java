@@ -17,9 +17,9 @@ import java.util.Set;
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    public Department(Long id) {
+    public Department(Integer id) {
         this.id = id;
     }
 
@@ -28,6 +28,4 @@ public class Department {
 
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private Set<Employee> employees;
-
-
 }

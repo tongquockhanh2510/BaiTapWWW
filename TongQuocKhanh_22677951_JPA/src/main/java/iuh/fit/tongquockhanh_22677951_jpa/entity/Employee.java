@@ -17,10 +17,13 @@ import lombok.Setter;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false)
     private String name;
+
+    @Column
+    private Integer age;
 
     @Column(nullable = false)
     private Double salary;
@@ -29,5 +32,4 @@ public class Employee {
     @JsonIgnore
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
-
 }

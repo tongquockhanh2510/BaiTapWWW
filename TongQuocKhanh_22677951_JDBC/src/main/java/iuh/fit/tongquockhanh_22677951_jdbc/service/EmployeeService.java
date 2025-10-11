@@ -1,3 +1,6 @@
+// ...existing code...
+
+// ...existing code...
 package iuh.fit.tongquockhanh_22677951_jdbc.service;
 
 import iuh.fit.tongquockhanh_22677951_jdbc.dao.EmployeeDAO;
@@ -8,27 +11,26 @@ import java.util.List;
 
 @Service
 public class EmployeeService {
+    public List<Employee> findByFilters(String name, Integer age, Double salary, Integer departmentId) {
+        return employeeDAO.findByFilters(name, age, salary, departmentId);
+    }
+    public List<Employee> findByDepartmentIdAndFilter(int departmentId, String name, String position) {
+        return employeeDAO.findByDepartmentIdAndFilter(departmentId, name, position);
+    }
     private final EmployeeDAO employeeDAO;
 
     public EmployeeService(EmployeeDAO employeeDAO) {
         this.employeeDAO = employeeDAO;
     }
 
-    public void save(Employee employee) {
-        employeeDAO.save(employee);
+    public int save(Employee employee) {
+        return employeeDAO.save(employee);
     }
 
     public void update(Employee employee) {
         employeeDAO.update(employee);
     }
 
-    public Employee getById(long id) {
-        return employeeDAO.getById(id);
-    }
-
-    public List<Employee> getAll() {
-        return employeeDAO.getAll();
-    }
 
     public void deleteById(long id) {
         employeeDAO.deleteById(id);
@@ -38,23 +40,7 @@ public class EmployeeService {
         return employeeDAO.findById(id);
     }
 
-    public List<Employee> findByName(String name) {
-        return employeeDAO.findByName(name);
-    }
 
-    public List<Employee> findByDepartmentId(int departmentId) {
-        return employeeDAO.findByDepartmentId(departmentId);
-    }
 
-    public List<Employee> findBySalaryRange(double minSalary, double maxSalary) {
-        return employeeDAO.findBySalaryRange(minSalary, maxSalary);
-    }
 
-    public List<Employee> findBySalaryGreaterThan(double salary) {
-        return employeeDAO.findBySalaryGreaterThan(salary);
-    }
-
-    public List<Employee> findBySalaryLessThan(double salary) {
-        return employeeDAO.findBySalaryLessThan(salary);
-    }
 }

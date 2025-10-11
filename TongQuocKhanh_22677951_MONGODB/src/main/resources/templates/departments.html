@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản lý Phòng ban (MongoDB)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .btn { padding: 5px 10px; text-decoration: none; margin: 2px; display: inline-block; }
+        .btn-primary { background-color: #007bff; color: white; }
+        nav { margin: 20px 0; }
+        nav a { margin-right: 15px; text-decoration: none; color: #007bff; }
+    </style>
+</head>
+<body>
+    <h1>Quản lý Phòng ban</h1>
+    <nav>
+        <a href="/">Trang chủ</a>
+        <a href="/employees">Nhân viên</a>
+        <a href="/departments">Phòng ban</a>
+    </nav>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên phòng ban</th>
+            <th>Thao tác</th>
+        </tr>
+        <tr th:each="department : ${departments}">
+            <td th:text="${department.id}"></td>
+            <td th:text="${department.name}"></td>
+            <td>
+                <a th:href="@{/departments/{id}/employees(id=${department.id})}"
+                   class="btn btn-primary">Xem nhân viên</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+

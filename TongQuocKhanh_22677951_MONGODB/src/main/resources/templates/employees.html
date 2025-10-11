@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản lý Nhân viên (MongoDB)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .btn { padding: 5px 10px; text-decoration: none; margin: 2px; display: inline-block; }
+        .btn-primary { background-color: #007bff; color: white; }
+        .btn-warning { background-color: #ffc107; color: black; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        nav { margin: 20px 0; }
+        nav a { margin-right: 15px; text-decoration: none; color: #007bff; }
+        .success { color: green; margin: 10px 0; }
+        .error { color: red; margin: 10px 0; }
+        .search-form input,
+        .search-form select { padding: 10px; font-size: 16px; min-width: 220px; margin-right: 6px; }
+    </style>
+    </head>
+<body>
+    <h1>Quản lý Nhân viên</h1>
+    <nav>
+        <a href="/">Trang chủ</a>
+        <a href="/employees">Nhân viên</a>
+        <a href="/departments">Phòng ban</a>
+    </nav>
+
+    <div th:if="${param.success}" class="success">✅ Thao tác thành công!</div>
+    <div th:if="${param.error}" class="error">❌ Có lỗi xảy ra!</div>
+
+    <form method="get" action="/employees" class="search-form">
+        <input type="text" name="name" placeholder="Tên nhân viên" th:value="${name}">
+        <input type="number" name="age" placeholder="Tuổi" th:value="${age}">
+        <input type="number" step="0.01" name="salary" placeholder="Lương" th:value="${salary}">
+        <label for="departmentId" class="sr-only" style="position:absolute;left:-9999px">Phòng ban</label>
+        <select id="departmentId" name="departmentId" title="Chọn phòng ban">
+            <option value="">--Phòng ban--</option>
+            <option th:each="dept : ${departments}" th:value="${dept.id}" th:text="${dept.name}" th:selected="${departmentId == dept.id}"></option>
+        </select>
+        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </form>
+    <a href="/employees/new" class="btn btn-primary">Thêm nhân viên</a>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th>Lương</th>
+            <th>Phòng ban</th>
+            <th>Thao tác</th>
+        </tr>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.age}"></td>
+            <td th:text="${#numbers.formatDecimal(employee.salary, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
+            <td>
+                <span th:each="dept : ${departments}"
+                      th:if="${employee.departmentId != null and dept.id == employee.departmentId}"
+                      th:text="${dept.name}">N/A</span>
+            </td>
+            <td>
+                <a th:href="@{/employees/edit/{id}(id=${employee.id})}" class="btn btn-warning">Sửa</a>
+                <a th:href="@{/employees/delete/{id}(id=${employee.id})}" class="btn btn-danger" onclick="return confirm('Xóa nhân viên này?')">Xóa</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+

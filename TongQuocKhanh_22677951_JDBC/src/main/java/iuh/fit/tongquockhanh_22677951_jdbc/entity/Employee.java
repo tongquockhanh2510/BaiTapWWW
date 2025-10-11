@@ -13,9 +13,17 @@ import org.springframework.data.relational.core.mapping.Table;
 @AllArgsConstructor
 @Table(name = "employees")
 public class Employee {
-    private int id;
+    private Integer id;
     private String name;
-    private double salary;
+    private Integer age;
+    private Double salary;
     @Column("department_id")
-    private int departmentID;
+    private Integer departmentID;
+
+    public Employee(String name, Integer age, Double salary, Integer departmentID) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.departmentID = departmentID;
+    }
 }
